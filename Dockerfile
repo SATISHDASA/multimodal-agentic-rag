@@ -1,7 +1,5 @@
 FROM python:3.12-slim
 
-# System dependencies: Tesseract OCR, ffmpeg (audio/video), and build tools
-# required by some Python wheels.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     tesseract-ocr \
     ffmpeg \
@@ -14,12 +12,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 RUN mkdir -p data/uploads data/sqlite data/qdrant_local data/logs
+
+RUN useradd -m appuser && chown -R appuser:appuser /app
+
+USER appuser
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app

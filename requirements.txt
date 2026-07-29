@@ -1,0 +1,43 @@
+# ---- Web frontend & backend ----
+streamlit>=1.37.0
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# ---- Agent / LLM orchestration ----
+langgraph>=0.2.20
+langchain>=0.2.16
+langchain-core>=0.2.38
+langchain-text-splitters>=0.2.4
+groq>=0.9.0
+
+# ---- Embeddings & reranking ----
+sentence-transformers>=3.0.1
+torch>=2.2.0
+einops>=0.8.0
+
+# ---- Vector database ----
+qdrant-client>=1.10.1
+
+# ---- Keyword search ----
+rank-bm25>=0.2.2
+
+# ---- Document / OCR / media processing ----
+pymupdf>=1.24.9
+pillow>=10.4.0
+opencv-python-headless>=4.10.0.84
+pytesseract>=0.3.10
+openai-whisper>=20231117
+
+# ---- Website scraping ----
+requests>=2.32.3
+beautifulsoup4>=4.12.3
+lxml>=5.2.2
+
+# ---- Config & validation ----
+pydantic>=2.8.2
+pydantic-settings>=2.4.0
+python-dotenv>=1.0.1
+
+# ---- Utilities ----
+numpy>=1.26.4
